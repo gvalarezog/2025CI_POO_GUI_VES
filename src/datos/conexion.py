@@ -5,12 +5,12 @@ class Conexion:
     """
     Clase que permite abrir conexion a la BBDD y abrir cursor.
     """
-    _SERVIDOR = '10.4.124.157'
+    _SERVIDOR = '10.4.64.90\\SQLUG5_2'
     # # _SERVIDOR = '10.4.74.77'
     # _SERVIDOR = '127.0.0.1'
-    _BBDD = 'POO_VES'
-    _USUARIO = 'poo_ves'
-    _PASSWORD = '1234'
+    _BBDD = 'Persona'
+    _USUARIO = 'poo_mat'
+    _PASSWORD = '123456789'
     _conexion = None
     _cursor = None
 

@@ -48,7 +48,6 @@ class PersonaDao:
             cursor.rollback()
             return None
 
-
     @classmethod
     def actualizar_persona(cls, persona):
         try:
@@ -57,6 +56,18 @@ class PersonaDao:
                 datos = (persona.nombre, persona.apellido, persona.cedula,
                          persona.sexo, persona.email, persona.cedula,)
                 retorno = cursor.execute(cls._UPDATE, datos)
+                return retorno.rowcount
+        except Exception as e:
+            print(e)
+            cursor.rollback()
+            return cls._ERROR
+
+    @classmethod
+    def eliminar_persona(cls, cedula):
+        try:
+            with Conexion.obtenerCursor() as cursor:
+                datos = (cedula,)
+                retorno = cursor.execute(cls._DELETE, datos)
                 return retorno.rowcount
         except Exception as e:
             print(e)
